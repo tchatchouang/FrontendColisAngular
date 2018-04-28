@@ -1,5 +1,5 @@
-Redux
+Redux: ce package me permettra de gere
   link : https://redux.js.org/
-
+  npm install redux @angular-redux/store --save // pour l'installation de redux
 
 
