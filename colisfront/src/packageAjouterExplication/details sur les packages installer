@@ -1,5 +1,9 @@
 Redux: ce package me permettra de gere
   link : https://redux.js.org/
   npm install redux @angular-redux/store --save // pour l'installation de redux
+  npm install --save-dev redux-devtools
+bootstrap
+  npm install bootstrap@4.0.0-beta.2
+
 
 

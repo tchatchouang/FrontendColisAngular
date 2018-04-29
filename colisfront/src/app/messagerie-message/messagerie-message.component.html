@@ -1,0 +1,80 @@
+<div class="chat-panel panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-comments fa-fw"></i> Chat {{idConversation}}
+    <div class="btn-group pull-right">
+    </div>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body" >
+
+    <ul class="chat" *ngFor="let listMsg of listMessages">
+
+
+      <li class="right clearfix message-in" *ngIf="listMsg.personnes.idPersonne !=idPersonneNumber ">
+        <span class="chat-img pull-left">
+          <img src="{{listMsg.personnes.photoPersonne }}" height="100" width="100" alt="User Avatar" class="img-circle" />
+        </span>
+        <div class="chat-body clearfix">
+          <div class="header">
+            <strong class="pull-left primary-font">{{listMsg.personnes.prenomPersonn}}</strong> <br>
+            <small class=" text-muted">
+              <i class="fa fa-clock-o fa-fw"></i>publiée il y'a {{listMsg.dateMessage| dayAgo}}  {{listMsg.typeMessage}}</small>
+          </div>
+          <p >
+            <strong class="pull-left primary-font">{{listMsg.cotenueMessage}}</strong>
+          </p>
+        </div>
+      </li>
+
+      <li class="right clearfix message-out" *ngIf="listMsg.personnes.idPersonne ==idPersonneNumber ">
+        <span class="chat-img pull-right">
+          <img src="{{listMsg.personnes.photoPersonne }}" height="100" width="100" alt="User Avatar" class="img-circle" />
+        </span>
+        <div class="chat-body clearfix">
+          <div class="header">
+            <strong class="pull-right primary-font">{{listMsg.personnes.prenomPersonn}}</strong> <br>
+            <small class="pull-right">
+              <i class="fa fa-clock-o fa-fw"></i>publiée il y'a {{listMsg.dateMessage| dayAgo}}  {{listMsg.typeMessage}}</small><br>
+          </div>
+          <p class="pull-right">
+            <strong class="pull-left primary-font"> {{listMsg.cotenueMessage}}</strong>
+          </p>
+        </div>
+      </li>
+
+     <!-- <li class="left clearfix message-out" *ngIf="listMsg.personnes.idPersonne ==idPersonneNumber ">
+        <span class="chat-img pull-right">
+          <img src="{{listMsg.personnes.photoPersonne }}" height="100" width="100" alt="User Avatar" class="img-circle" />
+        </span>
+        <div class="chat-body clearfix message-out">
+          <div class="header">
+            <strong class="primary-font">{{listMsg.conversations.personnes2.prenomPersonn}}</strong>
+            <small class="pull-right text-muted">
+              <i class="fa fa-clock-o fa-fw"></i> publiée il y'a {{(listMsg.dateMessage| dayAgo) - date}}
+            </small>
+          </div>
+          <p>
+            {{listMsg.cotenueMessage}}
+          </p>
+        </div>
+      </li>-->
+
+
+
+
+
+
+    </ul>
+  </div>
+  <!-- /.panel-body -->
+  <div class="panel-footer">
+    <div class="input-group">
+      <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." [(ngModel)]="replyMessage" />
+      <span class="input-group-btn">
+                            <button class="btn btn-primary btn-sm" id="btn-chat" (click)="getMessageReply()">
+                                Send
+                            </button>
+                        </span>
+    </div>
+  </div>
+</div>

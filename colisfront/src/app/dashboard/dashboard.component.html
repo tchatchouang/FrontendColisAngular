@@ -1,0 +1,94 @@
+<script>
+  /*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+  $(function() {
+    $('#side-menu').metisMenu();
+  });
+
+  //Loads the correct sidebar on window load,
+  //collapses the sidebar on window resize.
+  // Sets the min-height of #page-wrapper to window size
+  $(function() {
+    $(window).bind("load resize", function() {
+      var topOffset = 50;
+      var width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+      if (width < 768) {
+        $('div.navbar-collapse').addClass('collapse');
+        topOffset = 100; // 2-row-menu
+      } else {
+        $('div.navbar-collapse').removeClass('collapse');
+      }
+
+      var height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+      height = height - topOffset;
+      if (height < 1) height = 1;
+      if (height > topOffset) {
+        $("#page-wrapper").css("min-height", (height) + "px");
+      }
+    });
+
+    var url = window.location;
+    // var element = $('ul.nav a').filter(function() {
+    //     return this.href == url;
+    // }).addClass('active').parent().parent().addClass('in').parent();
+    var element = $('ul.nav a').filter(function() {
+      return this.href == url;
+    }).addClass('active').parent();
+
+    while (true) {
+      if (element.is('li')) {
+        element = element.parent().addClass('in').parent();
+      } else {
+        break;
+      }
+    }
+  });
+
+</script>
+<div id="wrapper" class="active">
+  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+    <div class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav">
+        <ul class="nav" id="side-menu">
+          <li>
+            <a [routerLink] ="['general']" routerLinkActive="active current"><i class="fa fa-dashboard fa-fw"></i> <span class="ttspan-fill">Dashboard</span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['trajetProposer']"  routerLinkActive="active current"><i class="fa fa-table fa-fw"></i> <span class="ttspan-fill">Trajets publiés</span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['proposeTrajet']"  routerLinkActive="active current"><i class="fa fa-table fa-fw"></i> <span class="ttspan-fill">Publié un trajet</span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['trajetDemander']" routerLinkActive="active current"><i class="fa fa-bar-chart-o fa-fw"></i> <span class="ttspan-fill">Demandes effectués</span><span class="fa arrow ttspan-fill"></span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['messagerie']"  routerLinkActive="active current"><i class="fa fa-edit fa-fw"></i><span class="ttspan-fill"> Messagerie</span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['avis']"  routerLinkActive="active current"><i class="fa fa-sitemap fa-fw"></i> <span class="ttspan-fill"> Laisser un avis</span><span class="glyphicon glyphicon-star"></span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['avisRecu']"  routerLinkActive="active current"><i class="fa fa-sitemap fa-fw"></i> <span class="ttspan-fill"> Avis Reçu</span><span class="fa arrow ttspan-fill"></span></a>
+          </li>
+          <li>
+            <a [routerLink] ="['profil']"  routerLinkActive="active current"><i class="fa fa-sitemap fa-fw"></i> <span class="ttspan-fill"> Profil</span><span class="fa arrow ttspan-fill"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="page-wrapper">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+
+</div>

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('colisfront App', () => {
+describe('colis-frontend App', () => {
   let page: AppPage;
 
   beforeEach(() => {

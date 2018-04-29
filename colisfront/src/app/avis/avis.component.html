@@ -1,0 +1,35 @@
+<div class="row">
+
+  <!-- liste des personne -->
+  <div class="col-md-4" >
+    <a  *ngFor=""
+        routerLinkActive="active current"
+        [routerLink]="['message', listcon.idConversation]">
+      <li class="list-group-item" *ngIf="listcon.personnes1.idPersonne != idPersonneNumber || listcon.personnes2.idPersonne != idPersonneNumber">
+        <div class="col-xs-12 col-sm-3">
+          <img src="{{listcon.personnes2.photoPersonne }}" height="500" width="500" class="img-responsive img-circle" />
+        </div>
+        <div class="col-xs-12 col-sm-9">
+          <span class="name">
+            <p *ngIf="listcon.personnes1.idPersonne != idPersonneNumber ">{{listcon.personnes1.prenomPersonn}}  {{listcon.personnes1.nomPersonne}}</p>
+            <p *ngIf="listcon.personnes2.idPersonne != idPersonneNumber ">{{listcon.personnes2.prenomPersonn}}  {{listcon.personnes2.nomPersonne}}</p>
+          </span><br/>
+          <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip"></span>
+          <span> <span class="text-muted">{{listcon.personnes2.paysPersonne}}</span><br/></span>
+          <span> <span class="text-muted">{{listcon.dateCreation| date:'EEEE dd-MMM-yyyy HH:mm'}}</span><br/></span>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+    </a>
+  </div>
+  <!-- Chat -->
+  <div class="col-md-8">
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+</div>
+
+<!-- /.panel-footer  , listcon.idConversation] -->
+

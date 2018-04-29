@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="well-block">
+        <div class="well-title">
+          <h2>Enregistrement</h2>
+        </div>
+        <form #f="ngForm" (ngSubmit) = "onSavePersone(f)">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Nom</label>
+                <input class="form-control input-md" type="text" id="nom" ngModel name="nomPersonne"  placeholder="Nom" required>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Prenom</label>
+                <input class="form-control input-md" type="text" id="prenom" ngModel name="prenomPersonn"  placeholder="Prenom" required>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Email</label>
+                <input class="form-control input-md" type="text" id="email" ngModel name="emailPersonne"  placeholder="Email" required email="">
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label" for="email">Adresse</label>
+                <input class="form-control input-md" type="text" id="adressse" ngModel name="adresseCompletePersonne"  placeholder="Adresse" required>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Date de Naissance</label>
+                <input class="form-control input-md" type="date" id="dateNaiss" ngModel name="dateNaissancePersonne"  placeholder="Date Naissence" require>
+              </div>
+            </div>
+
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Numéro de téléphone</label>
+                <input class="form-control input-md" type="text" id="numTel" ngModel name="numeroTelephonePersonne"  placeholder="Numéro Téléphone" required>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Prefessioin</label>
+                <input class="form-control input-md" type="text" id="prefesion" ngModel name="statusPersonne"  placeholder="Profession" required >
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Pays</label>
+                <select id="pays" ngModel name="paysPersonne"  class="form-control">
+                  <option value="France">France</option>
+                  <option value="Cameroun">Cameroun</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">identifiant</label>
+                <input class="form-control input-md" type="text" id="login" ngModel name="loginPersonne"  placeholder="Login" required>
+              </div>
+            </div>
+
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Mot de passe</label>
+                <input class="form-control input-md" type="password" id="password" ngModel name="passwordPersonne"  placeholder="Password" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label" >Position</label>
+                <select id="position" ngModel name="TYPE_PERSONNE" class="form-control">
+                  <option value="D">Demandeur</option>
+                  <option value="R">Rceptionneur</option>
+                  <option value="T">Transporteur</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="custom-file">
+                <input id="upload" type="file" (change)="imageChange($event)"/>
+
+                <span class="custom-file-control"></span>
+              </label>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <button   id="singlebutton"type="submit" name="singlebutton" class="btn btn-primary">Valider</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well-block">
+        <div class="well-title">
+        </div>
+        <div class="feature-block">
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">24/7 Hours Available</h4>
+            <div class="feature-content">
+              <p>Integer nec nisi sed mi hendrerit mattis. Vestibulum mi nunc, ultricies quis vehicula et, iaculis in magnestibulum.</p>
+            </div>
+          </div>
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">Experienced Staff Available</h4>
+            <div class="feature-content">
+              <p>Aliquam sit amet mi eu libero fermentum bibendum pulvinar a turpis. Vestibulum quis feugiat risus. </p>
+            </div>
+          </div>
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">Low Price & Fees</h4>
+            <div class="feature-content">
+              <p>Praesent eu sollicitudin nunc. Cras malesuada vel nisi consequat pretium. Integer auctor elementum nulla suscipit in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <input ngModel name="photoPersonne"  type="file" id="file" class="custom-file-input"  #photoPersonne (change)="onChange(photoPersonne.files)" required>-->

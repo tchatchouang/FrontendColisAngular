@@ -1,0 +1,264 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="well-block">
+        <div class="well-title">
+          <h2>Enregistrement</h2>
+        </div>
+        <form #f="ngForm" (ngSubmit) = "onTrajet(f.value)">
+          <div class="row">
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Intitulé de votre trajet</label>
+                <input class="form-control input-md" type="text" id="nom" ngModel name="libelleTrajet"
+                       name="libelleTrajet" placeholder="Intitulé" #libelleTrajet required minlength="4">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">ville de départ</label>
+                <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off"
+                       name="lieuDepart" class="form-control" #lieuDepart required>
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Date de départ</label>
+                <input class="form-control input-md" type="date" id="dateDepartId"   placeholder="Date de départ" ngModel name="dateDepart" required #dateDepart>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Pays d'arrivée</label>
+                <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control" #lieuArriver required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Date d'arrivé</label>
+                <input class="form-control input-md" type="date" id="dateArriverId"  placeholder="Date d'arrivé" ngModel name="dateArriver" required #dateArriver>
+                <span class="help-block" *ngIf="dateArriver.value < dateDepart.value"> la date d'arrivé doit être superieur celle de départ</span>
+              </div>
+            </div>
+
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label class="control-label">kilogrammes</label>
+                <select id="poidColisId" ngModel name="poidColis"  class="form-control" required >
+                  <option value="0">0</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                  <option value="60">60</option>
+                  <option value="70">70</option>
+                  <option value="80">80</option>
+                  <option value="90">90</option>
+                  <option value="100">100</option>
+                  <option value="110">110</option>
+                  <option value="120">120</option>
+                  <option value="130">130</option>
+                  <option value="140">140</option>
+                  <option value="150">150</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <button   id="singlebutton"type="submit" name="singlebutton" class="btn btn-primary" [disabled]="!f.valid">Valider</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well-block">
+        <div class="well-title">
+        </div>
+        <div class="feature-block">
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">Info pratique</h4>
+            <div class="feature-content">
+              <p>Iokokok.</p>
+            </div>
+          </div>
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">OKOExperienced Staff Available</h4>
+            <div class="feature-content">
+              <p>ookok</p>
+            </div>
+          </div>
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">okok</h4>
+            <div class="feature-content">
+              <p>Pokoko</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="well-block">
+        <div class="well-title">
+          <h2>Enregistrement</h2>
+        </div>
+        <form #f="ngForm" (ngSubmit) = "onTrajet(f.value)">
+          <div class="row">
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Intitulé de votre trajet</label>
+                <input class="form-control input-md" type="text" id="nom" ngModel name="libelleTrajet"  placeholder="Intitulé" required>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Pays de départ</label>
+                <select id="pays" ngModel name="lieuDepart"  class="form-control">
+                  <option value="France">France</option>
+                  <option value="Cameroun">Cameroun</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Date de départ</label>
+                <input class="form-control input-md" type="date" id="dateDepartId" ngModel name="dateDepart"  placeholder="Date de départ" require>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Pays d'arrivée</label>
+                <select id="pays" ngModel name="lieuArriver"  class="form-control">
+                  <option value="France">France</option>
+                  <option value="Cameroun">Cameroun</option>
+                  <option value="Canada">Canada</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Date d'arrivé</label>
+                <input class="form-control input-md" type="date" id="dateArriverId" ngModel name="dateArriver"  placeholder="Date d'arrivé" require>
+              </div>
+            </div>
+
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label class="control-label">kilogrammes</label>
+                <select id="poidColisId" ngModel name="poidColis"  class="form-control">
+                  <option value="0">0</option>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                  <option value="60">60</option>
+                  <option value="70">70</option>
+                  <option value="80">80</option>
+                  <option value="90">90</option>
+                  <option value="100">100</option>
+                  <option value="110">110</option>
+                  <option value="120">120</option>
+                  <option value="130">130</option>
+                  <option value="140">140</option>
+                  <option value="150">150</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <button   id="singlebutton"type="submit" name="singlebutton" class="btn btn-primary">Valider</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="well-block">
+        <div class="well-title">
+        </div>
+        <div class="feature-block">
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">Info pratique</h4>
+            <div class="feature-content">
+              <p>Iokokok.</p>
+            </div>
+          </div>
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">OKOExperienced Staff Available</h4>
+            <div class="feature-content">
+              <p>ookok</p>
+            </div>
+          </div>
+          <div class="feature feature-blurb-text">
+            <h4 class="feature-title">okok</h4>
+            <div class="feature-content">
+              <p>Pokoko</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label">Choix du type de colis</label>
+              <select id="pays" ngModel name="paysPersonne"  class="form-control" #newHero (keyup.enter)="addHero(newHero.value)"
+                      (blur)="addHero(newHero.value); newHero.value='' ">
+                <option value="France">Lettre</option>
+                <option value="Cameroun">Colis grande taille</option>
+              </select>
+            </div>
+          </div>-->
+<!--<div class="col-md-3">
+             <div class="form-group">
+               <label class="control-label">Ajouter</label>
+               <button (click)="addHero(newHero.value)"   id="singlebutton"type="button" name="singlebutton" class="btn btn-circle btn-danger">Ajouter</button>
+             </div>
+           </div>
+           <div class="col-md-12">
+             <div class="form-group">
+               <ul><li *ngFor="let hero of heroes">{{hero}}</li></ul>
+             </div>
+           </div>
+
+
+
+           <div class="col-md-6">
+             <div class="form-group">
+               <label class="control-label">Date de réception du colis avant embarquement</label>
+               <input class="form-control input-md" type="date" id="dateNaiss" ngModel name="dateNaissancePersonne"  placeholder="Date de réception du colis " require>
+             </div>
+           </div>-->

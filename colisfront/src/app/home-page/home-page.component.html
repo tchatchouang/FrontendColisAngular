@@ -1,0 +1,337 @@
+
+<! ========== HEADERWRAP ====================================================================================================
+============================================================================================================================= -->
+
+<div class="container-fluid " xmlns="">
+  <h1 class=""><strong>Recherche</strong></h1>
+  <div class="container-fluid blok1">
+      <div class="row mt">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label class="control-label">Ville de départ</label>
+            <input type="text" placeholder="Search for Location" autocorrect="off"
+                   autocapitalize="off" spellcheck="off"
+                   name="lieuDepart" class="form-control" #lieuDepart
+                   [(ngModel)]="lieuDep"
+                   (keyup)="dosearch()"
+                   required>
+          </div>
+        </div>
+
+         <div class="col-md-3">
+           <div class="form-group">
+             <label class="control-label">Ville d'arrivée</label>
+             <input type="text" placeholder="Search for Location" autocorrect="off" autocapitalize="off"
+                    spellcheck="off" class="form-control" #lieuArriver
+                    [(ngModel)]="lieuArr"
+                    (keyup)="dosearch()"
+                    required>
+           </div>
+         </div>
+
+         </div>
+  </div>
+</div>
+
+<!-- /row   *ngFor="let val of valeurAvis"
+
+         routerLinkActive="active current"
+         [routerLink]="['detailsTrajet', listcon.idTrajet]"
+         data-toggle="modal" data-target="['detailsTrajet', listcon.idTrajet]"
+         href="#myModal"
+         -->
+<div class="container-fluid">
+    <h1 class=""><strong>Voyages</strong></h1>
+    <br>
+    <div class="col-md-4 border border-primary" *ngFor="let listcon of listTrajetPersonne; let i = index; ">
+      <li class="list-group-item">
+        <a
+          data-toggle="modal" data-target="#{{ listcon.idTrajet }}"
+          routerLinkActive="active current">
+
+          <div class="modal fade" id="{{ listcon.idTrajet }}" tabIndex="-1" role="dialog" aria-labelledby="modal-idTrajet" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal-idTrajet">Modal title {{ listcon.idTrajet }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ... <p>#modal--{{i }}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          Modal title {{ listcon.idTrajet }}
+
+<!--
+          <div class="col-xs-12 col-sm-3">
+            <img src="{{photoP[i]}}" height="900" width="900" class="img-responsive img-circle" />
+          </div>
+
+          <div class="col-xs-12 col-sm-9 idTs">
+            <span class="name">
+              <p>{{prenomP[i]}}  {{nomP[i]}}</p>
+                <div class="rating col-md-1 border border-primary" *ngFor="let val of valeurAvis">
+                 <span class="glyphicon glyphicon-star"></span>
+                </div><br>
+              <p class="text-muted">
+                <span class="glyphicon glyphicon-folder-open" data-toggle="tooltip"></span>
+                <img class="ion-ionic">{{listcon.proposerTrajet[0].poidColis}} kg
+               <span class="glyphicon glyphicon-euro" data-toggle="tooltip"></span>
+                 prix
+              </p>
+            </span>
+            <span>
+              <span class="text-muted">
+                 <span class="glyphicon glyphicon-map-marker alert-success text-muted c-info" data-toggle="tooltip"></span>
+                {{listcon.lieuDepart}}, {{listcon.paysDepart}}
+                <span class="glyphicon glyphicon-time alert-success" data-toggle="tooltip"></span>
+                <span> <span class="text-muted">  le {{listcon.dateDepart | date:' dd-MMM-yyyy HH:mm'}}</span></span>
+              </span><br/>
+            </span>
+            <span>
+              <span class="text-muted">
+                <span class="glyphicon glyphicon-map-marker alert-danger text-muted c-info" data-toggle="tooltip"></span>
+                {{listcon.lieuArriver}}, {{listcon.paysArrive}}
+                <span class="glyphicon glyphicon-time alert-danger" data-toggle="tooltip"></span>
+                 <span> <span class="text-muted">  le {{listcon.dateArriver | date:' dd-MMM-yyyy HH:mm'}}</span></span>
+              </span><br/>
+            </span>
+
+          </div>
+          <div class="clearfix"></div>
+
+          -->
+        </a>
+
+      </li>
+
+      <br>
+    </div>
+
+  </div>
+  <router-outlet></router-outlet>
+  <div class="container-fluid">
+    <ul class="nav nav-pills">
+      <li [ngClass]="{active:i == currentPage}" *ngFor="let p of pages; let i = index">
+        <a (click)="goToPage(i)">{{i+1}}</a>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+<!--
+          <div class="modal fade" id="1" tabIndex="-1" role="dialog" aria-labelledby="modal-idTrajet" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal-idTrajet">Modal title {{ listcon.idTrajet }}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ... <p>#modal--{{i }}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+         -->
+
+
+
+
+
+
+<!-- Modal -->
+
+<!--
+
+
+
+  <!-- <div class="col-md-3">
+            <div class="form-group">
+              <label class="control-label">Date d'arrivé</label>
+              <input class="form-control input-md" type="date" id="dateArriverId"  name="dateArriver"
+                     placeholder="Date d'arrivé" require>
+            </div>
+          </div>-->
+
+<!-- <div class="col-md-3">
+   <div class="form-group">
+     <label class="control-label">Date d'arrivé</label>
+     <<button   id="singlebutton"type="submit" name="singlebutton" class="btn btn-primary" (click)="dosearch()">Valider</button>
+   </div>
+ </div>
+ -->
+<!-- <div class="col-md-3">
+   <div class="form-group">
+     <label class="control-label">Date de départ</label>
+     <input class="form-control input-md" type="date" id="dateDepartId"  name="dateDepart"
+            placeholder="Date de départ" require>
+   </div>
+ </div>-->
+
+
+
+<!--
+<ng-template #content>
+    <div class="modal-header">
+      <h4 class="modal-title">Modal title</h4>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>One fine body&hellip;</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-light">Close</button>
+    </div>
+  </ng-template>
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+
+               <span>☆</span>
+
+<span class="glyphicon glyphicon-star-empty alert-danger"></span>
+               <span class="glyphicon glyphicon-star-empty alert-danger"></span>
+               <span class="glyphicon glyphicon-star-empty alert-danger"></span>
+               <span class="glyphicon glyphicon-star-empty alert-danger"></span>
+
+
+               <span class="glyphicon glyphicon-star alert-danger"></span>
+               <span class="glyphicon glyphicon-star alert-danger"></span>
+               <span class="glyphicon glyphicon-star alert-danger"></span>
+               <span class="glyphicon glyphicon-star-empty"></span>
+               <span class="glyphicon glyphicon-star-empty"></span>
+               <span class="glyphicon glyphicon-star-empty"></span>
+
+
+          <table class="table table-striped">
+            <tbody>
+            <tr>
+              <td><span class="glyphicon glyphicon-map-marker alert-success text-muted c-info" data-toggle="tooltip"></span>  {{villeDep[i]}}, {{paysDepart[i]}}</td>
+              <td><span class="glyphicon glyphicon-time alert-success" data-toggle="tooltip"></span>
+                <span> <span class="text-muted">  le {{dateDepatt[i] | date:' dd-MMM-yyyy HH:mm'}}</span></span></td>
+            </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-striped">
+            <tbody>
+            <tr>
+              <td>
+                <span class="glyphicon glyphicon-map-marker alert-danger text-muted c-info" data-toggle="tooltip"></span>  {{villeArriv[i]}}, {{paysArrvive[i]}}
+              </td>
+              <td>
+                <span class="glyphicon glyphicon-time alert-danger" data-toggle="tooltip"></span>
+                <span> <span class="text-muted">  le {{dateArrvive[i]| date:' dd-MMM-yyyy HH:mm'}}</span></span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+
+        <span>
+            <span class="text-muted">
+              <span class="glyphicon glyphicon-map-marker alert-danger text-muted c-info" data-toggle="tooltip"></span>
+              {{villeArriv[i]}}, {{paysArrvive[i]}}
+              <span class="glyphicon glyphicon-time alert-danger" data-toggle="tooltip"></span>
+               <span> <span class="text-muted">  le {{dateArrvive[i]| date:' dd-MMM-yyyy HH:mm'}}</span></span>
+            </span><br/>
+          </span>
+
+-->
+<!-- <div class="row mt centered ">
+  <div class="col-lg-4 col-lg-offset-4">
+    <h3>News departure</h3>
+    <hr>
+  </div>
+</div>  -->
+
+<!--
+
+  <div class="row mt">
+    <div class="col-lg-6 col-md-6 col-xs-12 desc" *ngFor=" let listper of listPersonnes">
+      <a class="b-link-fade b-animate-go img-circle" href="#">
+        <img width="150" class="img-circle" src="{{listper.photoPersonne }}" height="100" width="100" alt="" />
+      </a>
+      <div class="ist-group list-group-danger">
+        <a href="" class="list-group-item active"><span class="badge badge-info">{{listper.proposerTrajet[0].poidColis}} kg</span>Poids Proposés</a>
+        <a href="" class="list-group-item"><span class="badge badge-info">Douala Cameroun</span> Paris CDG</a>
+        <a href="" class="list-group-item"><span class="badge badge-info">20/10/2017</span> 20/10/2017</a>
+      </div>
+    </div>
+  </div>
+
+   col-lg-4 -->
+
+
+<!--
+  <table class="table table-striped">
+    <thead>
+    <tr class="bg-primary">
+       <th>#</th>
+      <th>Date plucation</th>
+      <th>Pays depart</th>
+      <th>Date depart</th>
+      <th>Pays d'arriver</th>
+      <th>date d'arriver</th>
+      <th>Poids</th>
+      <th>Nombre de viste</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor=" let listt of listTrajet">
+      <td>{{listt.proposerTrajet[0].datePropositionTrajet}}</td>
+      <td>{{listt.lieuDepart}}</td>
+      <td>{{listt.dateDepart}}</td>
+      <td>@{{listt.lieuArriver}}</td>
+      <td>{{listt.dateArriver}}</td>
+      <td>{{listt.proposerTrajet[0].poidColis}}</td>
+      <td>{{listt.proposerTrajet[0].nombreVisite}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  -->
+
+<!--
+<div id="headerwrap">
+
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-8 col-lg-offset-2 mt">
+
+        <h1 class="animation slideDown">
+          Let me help you,<br> Now your luggage is under my protection.
+        </h1>
+      </div>
+
+    </div><
+  </div>
+</div>
+-->
+<!--<img src="../assets/img/Avion-en-vol.jpg" height="500" width="4100">-->
+
+
+
+
+
